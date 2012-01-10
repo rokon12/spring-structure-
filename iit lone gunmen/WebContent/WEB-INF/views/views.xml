@@ -16,4 +16,16 @@
 		<put-attribute name="title" value="About" />
 		<put-attribute name="body" value="/WEB-INF/views/about.jsp" />
 	</definition>
+	
+	<definition name="login/go" extends="standard-layout">
+		<put-attribute name="title" value="Log In" />
+		<put-attribute name="body" value="/WEB-INF/views/login.jsp" />
+	</definition>
+	
+	<definition name="login/success" extends="standard-layout">
+		<put-attribute name="title" value="Log Success" />
+		<put-attribute name="body" value="/WEB-INF/views/success.jsp" />
+	</definition>
+	
+	
 </tiles-definitions>

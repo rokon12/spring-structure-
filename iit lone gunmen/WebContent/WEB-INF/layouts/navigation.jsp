@@ -5,8 +5,8 @@
 	<li><a href="<c:url value="/app/home/about" />">About</a></li>
 	<li>
 		<%
-			if (false) {
-		%> <a href="<c:url value="#" />">Log In</a> <%
+			if (true) {
+		%> <a href="<c:url value="/app/login/go" />">Log In</a> <%
  	}
  %>
 	</li>
