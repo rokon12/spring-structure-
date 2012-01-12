@@ -18,13 +18,17 @@
 	</definition>
 
 	<definition name="login/login" extends="standard-layout">
-		<put-attribute name="title" value="About" />
+		<put-attribute name="title" value="Login" />
 		<put-attribute name="body" value="/WEB-INF/views/login/login.jsp" />
 	</definition>
 
 	<definition name="user/create" extends="standard-layout">
-		<put-attribute name="title" value="About" />
+		<put-attribute name="title" value="Create User" />
 		<put-attribute name="body" value="/WEB-INF/views/user/create.jsp" />
 	</definition>
 
+	<definition name="user/show" extends="standard-layout">
+		<put-attribute name="title" value="User List" />
+		<put-attribute name="body" value="/WEB-INF/views/user/show.jsp" />
+	</definition>
 </tiles-definitions>

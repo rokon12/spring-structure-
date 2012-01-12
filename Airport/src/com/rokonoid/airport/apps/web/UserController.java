@@ -2,16 +2,24 @@ package com.rokonoid.airport.apps.web;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.rokonoid.airport.apps.dao.UserDao;
+import com.rokonoid.airport.apps.dao.impl.DummyUser;
 import com.rokonoid.airport.apps.domain.User;
 
 @Controller
 @RequestMapping("/user/*")
 public class UserController {
+
+	@Autowired
+	private UserDao userDao;
 
 	@RequestMapping(value = "create", method = RequestMethod.GET)
 	public void create(User user) {
@@ -23,9 +31,18 @@ public class UserController {
 
 		if (result.hasErrors()) {
 			return "user/create";
+		} else {
+			userDao.create(user);
 		}
 
 		return "home/index";
+	}
+
+	@RequestMapping(value = "show", method = RequestMethod.GET)
+	public void showUserList(ModelMap map) {
+		DummyUser user = new DummyUser();
+		user.getAllUser();
+		map.put("userList", user.getAllUser());
 	}
 
 	private void validate(User user, BindingResult result) {
@@ -53,6 +70,5 @@ public class UserController {
 			result.addError(new ObjectError("password mismatch",
 					"password mismatch"));
 		}
-
 	}
 }

@@ -1,5 +1,8 @@
 package com.rokonoid.airport.apps.domain;
 
+import javax.persistence.Entity;
+
+@Entity
 public class User extends DomainObject {
 	private String userName;
 

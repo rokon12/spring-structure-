@@ -30,13 +30,11 @@
 			<tr>
 				<th>Full Name:</th>
 				<td><form:input path="fullName" /></td>
-
 			</tr>
 
 			<tr>
 				<th>Telephone :</th>
 				<td><form:input path="phoneNumber" /></td>
-
 			</tr>
 			<tr>
 				<td colspan="1"><input type="submit" value="Log In" /></td>

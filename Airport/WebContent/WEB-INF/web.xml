@@ -8,7 +8,7 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/web-application-config.xml</param-value>
+			<param-value>/WEB-INF/web-application-config.xml /WEB-INF/persistence-context.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
@@ -16,11 +16,7 @@
 		<servlet-name>Dispatcher Servlet</servlet-name>
 		<url-pattern>/app/*</url-pattern>
 	</servlet-mapping>
-	<session-config>
-		<session-timeout>120</session-timeout>
-		<tracking-mode>COOKIE</tracking-mode>
-		<tracking-mode>URL</tracking-mode>
-	</session-config>
+
 	<welcome-file-list>
 		<welcome-file>/index.jsp</welcome-file>
 	</welcome-file-list>
@@ -39,4 +35,8 @@
 		<servlet-name>/app/*</servlet-name>
 	</filter-mapping>
 
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/persistence-context.xml</param-value>
+	</context-param>
 </web-app>
